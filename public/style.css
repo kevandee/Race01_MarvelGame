@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.image_box {
+    position: relative;
+    width: 43%;
+    height: 100%;
+}
+
+.content_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.image_box img {
+    -webkit-user-drag: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content_box input{
+    outline: none;
+    width: 450px;
+    height: 45px;
+    border: none;
+    border-bottom: solid 1px rgb(163, 163, 163);
+    font-size: 20px;
+}
+
+.content_box label{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.heading_login {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login_container, .email_container, .pass_container, .username_container,
+.confirmpass_container{
+    margin-bottom: 30px;
+}
+
+.signin_container{
+    display: flex;
+    justify-content: center;
+}
+
+.button_form{
+    padding: 20px 90px;
+    border: none;
+    border-radius: 20px;
+    color:#fff;
+    font-size: 17px;
+    font-weight: 700;
+    background-color: rgb(235, 84, 84);
+    margin-bottom: 5px;
+}
+
+.send_container{
+    display: flex;
+    justify-content: center;
+}
+
+.create_account {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.forgot_pass{
+    float:right;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.lost_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.lost_container h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.lost_container img{
+    width: 350px;
+}
+
+.lost_container span{
+    font-size: 20px;
+    color: rgb(255, 92, 92);
+}
+
+/* MENU */
+
+.image_box_menu {
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+
+.image_box_menu img {
+    -webkit-user-drag: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content_box_menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20%;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.content_box_menu .card img {
+    width: 300px;
+    -webkit-user-drag: none;
+    border-radius: 15px;
+}
+
+.content_box_menu .name {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.content_box_menu .change_avatar .change_avatar_btn{
+    padding: 15px 75px;
+    background-color: rgb(235, 84, 84);
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+
+
+.content_box_menu .options {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 200px;
+}
+
+.content_box_menu .start_game a{
+    text-decoration: none;
+    color: #000;
+    font-size: 30px;
+    font-weight: 800;
+}
+.content_box_menu .logout_btn img{
+    -webkit-user-drag: none;
+    width: 50px;
+}
+
+/*-------------------Change avatar----------------------------*/
+.container_avatar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.profile .card img {
+    -webkit-user-drag: none;
+    width: 300px;
+    border-radius: 15px;
+}
+.profile .name {
+    font-size: 24px;
+    font-weight: 700;
+}
+.profile .score {
+    margin-bottom: 40px;
+}
+
+.profile .save_exit_btn {
+    padding: 15px 50px;
+    background-color: rgb(80, 189, 112);
+    margin-bottom: 8px;
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+.profile .exit_btn {
+    padding: 15px 95px;
+    background-color: rgb(235, 84, 84);
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+
+.img_list {
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.img_list img {
+    -webkit-user-drag: none;
+    width: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.img_list img:hover {
+   border: 8px solid rgb(235, 84, 84);
+}
+
+
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    outline: 5px solid #f00;
+  }
+
+/*=================LOGIN | SIGN UP | REMEMBER ME====================*/
+
+@media only screen and (max-width: 900px) {
+    .heading_login {
+        font-size: 30px;
+    }
+    .image_box {
+        width: 40%;
+    }
+    .content_box input {
+        width: 300px;
+        height: 30px;
+        font-size: 15px;
+    }
+    .button_form {
+        padding: 15px 70px;
+        border-radius: 14px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .image_box {
+        width: 0%;
+    }
+}
+
+
+/*=====================MENU=====================*/
+
+@media only screen and (max-width: 1100px) {
+    .content_box_menu .card img{
+        width: 200px;
+    }
+
+    .content_box_menu {
+        grid-gap: 2%;
+    }
+
+    .content_box_menu .change_avatar .change_avatar_btn{
+        padding: 15px 30px;
+    }
+    .content_box_menu .options a{
+        font-size: 24px;
+    }
+    .content_box_menu .options img{
+        width: 40px;
+    }
+    .content_box_menu .options {
+        grid-gap: 100px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .image_box_menu {
+        display: none;
+    }
+}

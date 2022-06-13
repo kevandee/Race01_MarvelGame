@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="tab_icon.png">
+    <title>Sign Up</title>
+</head>
+<body>
+    <section>
+        <div class="image_box">
+            <img src="login_wallpaper.jpg" alt="">
+        </div>
+        <div class="content_box">
+            <form>
+                <h1 class="heading_login">Sign UP</h1>
+                <div class="login_container">
+                    <label for="login">Login</label><br>
+                    <input type="text" name="login" id="login" placeholder="Create a login" required minlength="5">
+                </div>
+                <div class="email_container">
+                    <label for="email">Email</label><br>
+                    <input type="text" name="email" id="email" placeholder="example@mail.com" required>
+                </div>
+                <div class="username_container">
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" id="username" placeholder="Create an username" required minlength="5">
+                </div>
+                <div class="pass_container">
+                    <label for="pass">Password</label><br>
+                    <input type="password" name="password" id="pass" placeholder="Choose a password" required minlength="8">
+                </div>
+                <div class="confirmpass_container">
+                    <label for="confirm_pass">Confirm Password</label><br>
+                    <input type="password" id="confirm_pass" placeholder="Repeat the password" required minlength="8">
+                </div>
+                <div class="signin_container">
+                    <button class="button_form signin_btn" type="submit">SIGN UP</button>
+                </div>
+                <div class="create_account">
+                    <span>Already have an account?</span>
+                    <a href="/login">Log in</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "port": 3000,
+    "db" : {
+        "host": "localhost",
+        "user": "achaika",
+        "database": "marvel_game",
+        "password": "securepass"
+    },
+    "jwt" : {
+        "secret": "achaikasupersecretkey",
+        "tokenLife": 1800
+    },
+    "email" : {
+        "user": "achaikanodemailer@gmail.com",
+        "password": "ucode_nodemailer1"
+    }
+}

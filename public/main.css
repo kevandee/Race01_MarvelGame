@@ -1,0 +1,11 @@
+#list {
+    display: block;
+}
+
+.user-li {
+    display: block;
+}
+
+#on-game-div, #on-game-div * {
+    display: block;
+}

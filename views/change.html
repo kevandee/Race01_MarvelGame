@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change avatar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="tab_icon.png">
+</head>
+<body>
+    <section>
+        <form method="POST" action="/changeAvatar">
+            <div class="container_avatar">
+                <div class="profile">
+                    <div class="card">
+                        <img src="profile_imgs/man.jpg" alt="User Card">
+                    </div>
+                    <div class="name">
+                        <span class="menu_name">Name</span>
+                    </div>
+                    <div class="score">
+                        <span class="menu_score">Score</span>
+                    </div>
+                    <div class="save_exit">
+                        <a href="/"><button class="save_exit_btn" type="submit">Save and Exit</button></a>
+                    </div>
+                    <div class="exit">
+                        <a href="/"><button class="exit_btn" type="reset">Exit</button></a>
+                    </div>
+                </div>
+                <div class="img_list">
+                    <div class="grid-item captain">
+                        <label>
+                            <input type="radio" name="profile_img" value="captain">
+                            <img src="profile_imgs/captain.jpg" alt="Captain America">
+                        </label>
+                    </div>
+                    <div class="grid-item hulk">
+                        <label>
+                            <input type="radio" name="profile_img" value="hulk">
+                            <img src="profile_imgs/hulk.jpg" alt="Hulk">
+                        </label>
+                    </div>
+                    <div class="grid-item wolverine">
+                        <label>
+                            <input type="radio" name="profile_img" value="man">
+                            <img src="profile_imgs/man.jpg" alt="Wolverine">
+                        </label>
+                    </div>
+                    <div class="grid-item idk">
+                        <label>
+                            <input type="radio" name="profile_img" value="idk">
+                            <img src="profile_imgs/idk.jpg" alt="Some Man">
+                        </label>
+                    </div>
+                    <div class="grid-item ironman">
+                        <label>
+                            <input type="radio" name="profile_img" value="ironman">
+                            <img src="profile_imgs/ironman.jpg" alt="Iron Man">
+                        </label>
+                    </div>
+                    <div class="grid-item spiderman">
+                        <label>
+                            <input type="radio" name="profile_img" value="spiderman">
+                            <img src="profile_imgs/spiderman.jpg" alt="Spider-man">
+                        </label>
+                    </div>
+                    <div class="grid-item trooper">
+                        <label>
+                            <input type="radio" name="profile_img" value="trooper">
+                            <img src="profile_imgs/trooper.jpg" alt="Storm Trooper">
+                        </label>
+                    </div>
+                    <div class="grid-item doctor">
+                        <label>
+                            <input type="radio" name="profile_img" value="doctor">
+                            <img src="profile_imgs/doctor.jpg" alt="Doctor Strange">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    //let userData;
+    let socket = io();
+    socket.emit('setUser', getCookie('token'));
+    socket.on('userData', (data) => {
+        document.querySelector('.menu_name').textContent = data.login;
+        document.cookie = 'login=' + data.login;
+        document.querySelector('.menu_score').textContent = 'Score: ' + data.score;
+        document.querySelector('.card img').setAttribute('src', data.profile_img);
+    });
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    document.querySelectorAll('input[type=radio]').forEach(elem => {
+        elem.addEventListener('input', ()=> {
+            document.querySelector('.card img').setAttribute('src', 'profile_imgs/'+elem.value+'.jpg');
+        });
+    });
+</script>
+</html>

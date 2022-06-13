@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="tab_icon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+</head>
+<body>
+    <section class="menu_container">
+        <div class="image_box_menu">
+            <img src="menu_poster.png">
+        </div>
+        <div class="content_box_menu">
+            <div class="main_info">
+                <div class="card">
+                    <img src="profile_imgs/user.jpg" alt="User Card">
+                </div>
+                <div class="name">
+                    <span class="menu_name"></span>
+                </div>
+                <div class="score">
+                    <span class="menu_score"></span>
+                </div>
+                <div class="change_avatar">
+                    <a href="/change"><button class="change_avatar_btn">Change avatar</button></a>
+                </div>
+            </div>
+            <div class="options">
+                <div class="start_game">
+                    <a href="/onGame"><span class="menu_game">FIND<br>GAME</span></a>
+                </div>
+                <div class="logout_btn">
+                    <a href="/logout"><img src="sign_out.svg" alt="Log out"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    //let userData;
+    let socket = io();
+    socket.emit('setUser', getCookie('token'));
+    socket.on('userData', (data) => {
+        //userData = data;
+        document.querySelector('.menu_name').textContent = data.login;
+        document.cookie = 'login=' + data.login;
+        document.querySelector('.menu_score').textContent = 'Score: ' + data.score;
+        document.querySelector('.card img').setAttribute('src', data.profile_img);
+    });
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+</script>
+</html>

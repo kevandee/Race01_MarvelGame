@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="tab_icon.png">
+    <title>Password reminder</title>
+</head>
+<body>
+    <section>
+        <div class="image_box">
+            <img src="login_wallpaper.jpg" alt="">
+        </div>
+        <div class="content_box">
+            <form method="post" action="/api/remind">
+                <h1 class="heading_login">Reset your<br>password</h1>
+                <div class="email_container">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" placeholder="Type in your email" required>
+                </div>
+                <div class="send_container">
+                    <button class="button_form send_btn" type="submit">SEND</button>
+                </div>
+                <div class="create_account">
+                    <span>Remember your password?</span>
+                    <a href="/login">Go to login</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="remind.js"></script>
+</body>
+</html>

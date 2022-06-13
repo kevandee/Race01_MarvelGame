@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="icon" href="tab_icon.png">
+</head>
+<body>
+    <div class="container">
+        <div id="page_mask"></div>
+        <div class="game_area_main">
+            <div class="up cards">
+                <div class="exit_container">
+                    <a href="/"><img src="leave_game.png" alt="Leave the game"></a>
+                </div>
+                <div class="info_container">
+                    <span class="name">Player...</span><br>
+                    <span class="exp">undefined trophies</span>
+                </div>
+                <div class="enemy_img">
+                    <div class="hp_container">
+                        <span class="enemy_hp">30</span>
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="white"/>
+                        </svg>
+                    </div>
+                    <img src="profile_imgs/user.jpg" alt="Enemy avatar">
+                </div>
+                <div class="cards_place enemy_cards">
+                    <!--<img src="cards_place.png" alt="">-->
+                </div>
+            </div>
+            <div id="enemy-table" class="table">
+                <div class="deckofCards">
+                    <img src="deck.png" alt="Deck of cards">
+                </div>
+                <div class="game_area">
+                    
+                </div>
+            </div>
+            <div id="own-table" class="table">
+                <div class="deckofCards">
+                    <img src="deck.png" alt="Deck of cards">
+                </div>
+                <div class="game_area">
+                    
+                </div>
+            </div>
+            <div id="arrow"></div>
+            <div class="down cards">
+                <div class="plug"></div>
+                <div class="info_container">
+                    <span class="name">You</span><br>
+                    <span class="exp">...xp</span>
+                </div>
+                <div class="user_img">
+                    <div class="hp_container">
+                        <span class="your_hp">30</span>
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="white"/>
+                        </svg>
+                    </div>
+                    <img src="profile_imgs/user.jpg" alt="Enemy avatar">
+                </div>
+                <div class="cards_place your_cards">
+                    <!--<img src="cards_place_your.png" alt="">-->
+                </div>
+                <div class="mana_container"><span class="text">MANA</span><br><span id="mana-count"></span></div>
+                <div id="turn-div">
+                    <a onclick="endTurn()"><img src="nextmove.png" alt="Next move"></a>
+                    <!-- <div id="move"></div> -->
+                    <div class="timer_container">
+                        <span class="timer">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dialog id="waiting_dialog">
+        <div class="text_container">
+            <h1>Searching game</h1>
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div><br><br><br><br>
+            <a href="/">Cancel</a>
+        </div>
+        <div class="img_container">
+            <img src="waiting_player.jpg">
+        </div>
+    </dialog>
+
+
+    <dialog id="res_dialog">
+        <div class="text_container">
+            <h1 class="dialog_header">Congratulations. You won!</h1>
+            <p class="dialog_description">You have defeated kevandee and earned 14 trophies.</p>
+            <a href="/">Menu</a>
+        </div>
+        <div class="img_container">
+            <img src="result.jpg">
+        </div>
+    </dialog>
+
+    <div class="test"></div>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="game.js"></script>
+<script src="main.js"></script>
+<script src="dragAndDrop.js"></script>
+</html>
